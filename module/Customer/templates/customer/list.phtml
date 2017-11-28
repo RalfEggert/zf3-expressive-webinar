@@ -1,0 +1,31 @@
+<?php
+/**
+ * zf3-expressive-webinar
+ *
+ * @package    MODULENAME
+ * @copyright  Copyright (c) 2014 Admin
+ * @license    All rights reserved
+ */
+
+?>
+<h1>Kundenliste</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Land</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->customerList as $customer) : ?>
+        <tr>
+            <td><?= $customer['id'] ?></td>
+            <td><?= $customer['firstname'] ?></td>
+            <td><?= $customer['lastname'] ?></td>
+            <td><?= $customer['country'] ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>

@@ -1,6 +1,9 @@
 <?php
 
 namespace App;
+use App\Pipeline\PipelineDelegatorFactory;
+use App\Router\RouterDelegatorFactory;
+use Zend\Expressive\Application;
 
 /**
  * The configuration provider for the App module
@@ -33,6 +36,12 @@ class ConfigProvider
     public function getDependencies()
     {
         return [
+            'delegators' => [
+                Application::class => [
+                    RouterDelegatorFactory::class,
+                    PipelineDelegatorFactory::class,
+                ],
+            ],
             'invokables' => [
                 Action\PingAction::class => Action\PingAction::class,
             ],
